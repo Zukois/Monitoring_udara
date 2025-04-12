@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Kualitas Udara</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+</head>
+
+
+
+<body class="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-6 font-sans">
+
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-4">
+        <h1 class="text-3xl font-bold text-blue-800">Monitoring Kualitas Udara Berbasis LoRa</h1>
+        <span id="mqtt-status" class="text-sm px-3 py-1 rounded bg-gray-400 text-white">Connecting...</span>
+    </div>
+
+    <!-- Tools -->
+    <div class="flex justify-between items-center mb-6 flex-wrap gap-2">
+        <p id="current-time" class="text-gray-600 text-sm"></p>
+        <button id="save-csv" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded shadow">
+            💾 Simpan Log
+        </button>
+    </div>
+
+    <div class="clock-container">
+        <div id="clock" class="clock">
+          <span id="hours" class="time"></span>:<span id="minutes" class="time"></span>:<span id="seconds" class="time"></span>
+        </div>
+        <span id="date" class="date"></span>
+      </div>
+
+    <!-- Transmiter 1 -->
+    <div class="bg-blue-100 p-4 rounded-xl mb-8">
+        <h2 class="text-2xl font-semibold text-blue-700 mb-3">📡 Transmiter 1</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-10">
+
+            <div class="parameter-card border-blue-400">
+                <h2 class="parameter-title text-blue-500">🌡️ Suhu</h2>
+                <p id="suhu-1" class="parameter-value text-blue-700">-- °C</p>
+            </div>
+
+            <div class="parameter-card border-green-400">
+                <h2 class="parameter-title text-green-500">💧 Kelembapan</h2>
+                <p id="kelembapan-1" class="parameter-value text-green-700">-- %</p>
+            </div>
+
+            <div class="parameter-card border-red-400">
+                <h2 class="parameter-title text-red-500">🚗 CO</h2>
+                <p id="co-1" class="parameter-value text-red-700">-- ppm</p>
+            </div>
+
+            <div class="parameter-card border-yellow-400">
+                <h2 class="parameter-title text-yellow-500">🌿 O₃</h2>
+                <p id="o3-1" class="parameter-value text-yellow-700">-- ppm</p>
+            </div>
+
+            <div class="parameter-card border-purple-400">
+                <h2 class="parameter-title text-purple-500">🟣 PM₁₀</h2>
+                <p id="pm10-1" class="parameter-value text-purple-700">-- µg/m³</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Transmiter 2 -->
+    <div class="bg-green-100 p-4 rounded-xl mb-8">
+        <h2 class="text-2xl font-semibold text-green-700 mb-3">📡 Transmiter 2</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+
+            <div class="parameter-card border-blue-400">
+                <h2 class="parameter-title text-blue-500">🌡️ Suhu</h2>
+                <p id="suhu-2" class="parameter-value text-blue-700">-- °C</p>
+            </div>
+
+            <div class="parameter-card border-green-400">
+                <h2 class="parameter-title text-green-500">💧 Kelembapan</h2>
+                <p id="kelembapan-2" class="parameter-value text-green-700">-- %</p>
+            </div>
+
+            <div class="parameter-card border-red-400">
+                <h2 class="parameter-title text-red-500">🚗 CO</h2>
+                <p id="co-2" class="parameter-value text-red-700">-- ppm</p>
+            </div>
+
+            <div class="parameter-card border-yellow-400">
+                <h2 class="parameter-title text-yellow-500">🌿 O₃</h2>
+                <p id="o3-2" class="parameter-value text-yellow-700">-- ppm</p>
+            </div>
+
+            <div class="parameter-card border-purple-400">
+                <h2 class="parameter-title text-purple-500">🟣 PM₁₀</h2>
+                <p id="pm10-2" class="parameter-value text-purple-700">-- µg/m³</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+
+    <!-- Footer -->
+    <footer class="text-center text-gray-500 text-sm mt-10">
+        <p>Created by <span class="font-semibold text-blue-600">Your Name</span></p>
+    </footer>
+
+</body>
+
+</html>

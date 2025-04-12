@@ -1,0 +1,156 @@
+/* Parameter card styling */
+.parameter-card {
+    background-color: #ffffff;
+    border-left-width: 4px;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Parameter title */
+  .parameter-title {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600;    /* font-semibold */
+    margin-bottom: 0.25rem;
+  }
+  
+  /* Parameter value with border separator */
+  .parameter-value {
+    font-size: 2.25rem;  /* text-4xl */
+    font-weight: 700;    /* font-bold */
+    border-top: 2px solid #d1d5db; /* border-gray-300 */
+    padding-top: 0.75rem;  /* pt-3 */
+    margin-top: 0.75rem;   /* mt-3 */
+  }
+  
+  /* Background colors to distinguish transmitters */
+  .bg-blue-100 {
+    background-color: #ebf8ff;
+  }
+  
+  .bg-green-100 {
+    background-color: #f0fff4;
+  }
+  
+  /* Footer */
+  footer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    color: #6b7280; /* text-gray-500 */
+    font-size: 0.875rem;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .parameter-card {
+      padding: 1rem;
+    }
+  
+    .parameter-value {
+      font-size: 1.75rem;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .grid-cols-1 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .grid-cols-1 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9fafb;
+    color: #1f2937;
+  }
+  
+  /* Dark mode styles */
+  .dark body {
+    background-color: #1f2937; /* bg-gray-800 */
+    color: #f9fafb;            /* text-white */
+  }
+  
+  .dark .parameter-card {
+    background-color: #374151; /* bg-gray-700 */
+    color: #f9fafb;
+    border-color: #60a5fa;     /* border-blue-400 */
+  }
+  
+  .dark .parameter-value {
+    border-color: #9ca3af;     /* border-gray-400 */
+  }
+  
+  .dark footer {
+    color: #9ca3af;
+  }
+  
+  /* Container untuk jam */
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  /* Styling jam */
+  .clock {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.25rem; /* Membuat jam besar */
+    font-weight: 600;
+    color: #1f2937; /* Warna teks utama */
+    padding: 1rem 2rem;
+    background-color: #f9fafb;
+    border-radius: 9999px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Gaya detik */
+  #seconds {
+    color: #60a5fa; /* Warna biru untuk detik */
+    animation: pulse 1s infinite;
+  }
+  
+  /* Gaya jam dan menit */
+  .time {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #4b5563; /* Warna teks utama */
+  }
+  
+  /* Animasi untuk detik */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Tanggal */
+  .date {
+    font-size: 1.25rem;
+    color: #6b7280; /* Warna abu-abu */
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+  
